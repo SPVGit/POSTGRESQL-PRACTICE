@@ -4,13 +4,13 @@ SELECT name, phone, country FROM customers;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-## DISPLAY NAME, PHONE AND COUNTRY FROM CUSTOMERS TABLE - MULTI LINE
+## DISPLAY NAME, PHONE AND COUNTRY FROM CUSTOMERS TABLE - MULTI LINE - SAME RESULT
 
 SELECT name,
        phone,
        country
-  FROM
-       customers;
+FROM
+      customers;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -22,17 +22,23 @@ SELECT * FROM rooms;
 
 ## LIST NAME, PHONE AND EMAIL OF ALL CUSTOMERS:
 
+SELECT name, phone, email FROM customers;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## LIST ALL THE DETAILS FROM CUSTOMERS TABLE
+
+SELECT * FROM customers;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## LIST THE CUSTOMER ID, CHECK IN DATE AND NUMBER OF GUESTS FROM RESERVATIONS 
 
+SELECT cust_id, checkin_date, no_guests FROM reservations;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-# SHOW ROOM NUMBER AND 85% OF THE RATE FROM ROOMS TABLE
+## SHOW ROOM NUMBER AND 85% OF THE RATE FROM ROOMS TABLE
 
 SELECT room_no, rate * 0.85 FROM rooms;
 +---------+-------------+
@@ -47,7 +53,7 @@ SELECT room_no, rate * 0.85 FROM rooms;
 ## SHOW ROOM NUMBER AND 85% OF RATE BUT WITH A NEW HEADING (COLUMN ALIAS)
 
   SELECT room_no,
-       rate * 0.85 AS discounted_rate //column alias
+       rate * 0.85 AS discounted_rate 
     FROM rooms;
 +---------+-----------------+
 | room_no | discounted_rate |
@@ -58,21 +64,25 @@ SELECT room_no, rate * 0.85 FROM rooms;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-For example, to display the weekly rate for a room (with 10% weekly discount)
+## TO DISPLAY WEEKLY RATE FOR A ROOM (WITH 10% WEEKLY DISCOUNT)
 
 SELECT room_no, room_type, rate * 7 * 0.90 from rooms;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-You can change the column heading using a column alias:
+## CHANGE COLUMN HEADING WITH A COLUMN ALIAS
+
 SELECT room_no, room_type, rate * 7 * 0.90 as weekly_rate from rooms;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Use string concatenation to glue character data together:
+## STRING CONCATENATION TO GLUE DATA TOGETHER: 
+
 SELECT 'Customer name = ' || name FROM customers;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## SHOW ID NAME PHONE EMAIL AND COUNTRY OF ALL CUSTOMERS FROM FRANCE
 
 SELECT id, name, phone, email, country
   FROM customers
@@ -97,12 +107,16 @@ SELECT id, name, phone, email, country
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+## SHOW ALL DETAILS FROM RESERVATIONS TABLE WHERE ROOM NO IS BETWEEN 200 AND 299 AND CHECK IN DATE IS AFTER 01/01/2018
+
 SELECT * FROM reservations
    WHERE room_no >= 200
      AND room_no < 300
-     AND checkin_date >= '2018-01-01';
+     AND checkin_date >= '2023-01-01';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## SHOW ALL DETAILS FROM ROOMS TABLE WHERE ROOM TYPE IS EITHER PREMIER OR RATE IS LESS THAN 100 AND ROOM NO LESS THAN 300
 
 SELECT * FROM rooms
    WHERE room_type = 'PREMIER'

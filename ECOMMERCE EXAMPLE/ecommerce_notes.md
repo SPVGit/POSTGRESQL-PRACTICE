@@ -1,25 +1,24 @@
 
 
-Retrieve all the customers' names and addresses who live in the United States
+## Retrieve all the customers' names and addresses who live in the United States
 
 =>SELECT name FROM customers WHERE country = 'United States'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the customers in ascending name sequence
+## Retrieve all the customers in ascending name sequence
 
 =>SELECT name FROM customers ORDER BY name
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the products whose name contains the word socks
+## Retrieve all the products whose name contains the word socks
 
 => SELECT * FROM products WHERE product_name ILIKE '%socks%'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the products which cost more than 100 showing 
-product id, name, unit price and supplier id.
+## Retrieve all the products which cost more than 100 showing product id, name, unit price and supplier id.
 
 =>SELECT
     p.id AS product_id,
@@ -37,13 +36,13 @@ WHERE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-Retrieve the 5 most expensive products
+## Retrieve the 5 most expensive products
 
 =>SELECT * FROM product_availability ORDER BY unit_price DESC LIMIT 5;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the products with their corresponding suppliers. The result should only contain the columns product_name, unit_price and supplier_name
+## Retrieve all the products with their corresponding suppliers. The result should only contain the columns product_name, unit_price and supplier_name
 
 =>SELECT 
 pa.product_name AS new_name, 
@@ -58,7 +57,7 @@ pb.supp_id = pc.id;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the products sold by suppliers based in the United Kingdom. The result should only contain the columns product_name and supplier_name.
+## Retrieve all the products sold by suppliers based in the United Kingdom. The result should only contain the columns product_name and supplier_name.
 
 =>SELECT
     p.product_name AS new_name,  //  OR p.product_name to retain old name
@@ -78,27 +77,28 @@ WHERE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all orders, including order items, from customer ID 1. Include order id, reference, date and total cost (calculated as quantity * unit price).
+## Retrieve all orders, including order items, from customer ID 1. Include order id, reference, date and total cost (calculated as quantity * unit price).
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all orders, including order items, from customer named Hope Crosby
+## Retrieve all orders, including order items, from customer named Hope Crosby
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the products in the order ORD006. The result should only contain the columns product_name, unit_price and quantity.
+## Retrieve all the products in the order ORD006. The result should only contain the columns product_name, unit_price and quantity.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve all the products with their supplier for all orders of all customers. The result should only contain the columns name (from customer), order_reference, order_date, product_name, supplier_name and quantity.
+## Retrieve all the products with their supplier for all orders of all customers. 
+## The result should only contain the columns name (from customer), order_reference, order_date, product_name, supplier_name and quantity.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Retrieve the names of all customers who bought a product from a supplier based in China.
+## Retrieve the names of all customers who bought a product from a supplier based in China.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-List all orders giving customer name, order reference, order date and order total amount (quantity * unit price) in descending order of total.
+## List all orders giving customer name, order reference, order date and order total amount (quantity * unit price) in descending order of total.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
